@@ -1,0 +1,34 @@
+import pyautogui
+import webbrowser
+
+colors = [(194,231,255), (242, 246, 252), (27, 97, 209)]
+points = [
+    (120, 230),#compose
+    (1400, 440),#check if box open 
+    (1339,477), # destination
+    (1310, 518),#title
+    (1305, 561),#body
+    (1321, 996)#send
+]
+
+
+messages = ["cstanley466@lsr7.net", "An important security vulnerability",
+            "Thank you so much for educating me on the dangers of running unknown software on my computer\n In order to repay you for this valuable lesson, I must now give you all 17 of my V-Bucks, from the hit video game, Fortnite! \n\n From,\n Your favorite classmate"]
+
+pyautogui.mouseInfo()
+
+webbrowser.open("https://mail.google.com/mail")
+
+
+while True:
+    if pyautogui.pixelMatchesColor(points[0][0], points[0][1], colors[0],20):
+        break
+pyautogui.click(points[0][0], points[0][1])
+
+while True:
+    if pyautogui.pixelMatchesColor(points[1][0], points[1][1], colors[1]):
+        break
+pyautogui.click(points[2][0], points[2][1])
+for x in range(3):
+    pyautogui.typewrite(messages[x])
+    pyautogui.click(points[x+3][0], points[x+3][1])
