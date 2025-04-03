@@ -1,4 +1,4 @@
-import webbroswer
+import webbrowser
 import time
 
 print("""
