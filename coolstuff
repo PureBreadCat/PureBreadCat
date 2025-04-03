@@ -1,5 +1,6 @@
 import pyautogui
 import webbrowser
+import time
 
 colors = [(194,231,255), (242, 246, 252), (27, 97, 209)]
 points = [
@@ -15,11 +16,9 @@ points = [
 messages = ["cstanley466@lsr7.net", "An important security vulnerability",
             "Thank you so much for educating me on the dangers of running unknown software on my computer\n In order to repay you for this valuable lesson, I must now give you all 17 of my V-Bucks, from the hit video game, Fortnite! \n\n From,\n Your favorite classmate"]
 
-pyautogui.mouseInfo()
-
 webbrowser.open("https://mail.google.com/mail")
 
-
+time.sleep(1)
 while True:
     if pyautogui.pixelMatchesColor(points[0][0], points[0][1], colors[0],20):
         break
